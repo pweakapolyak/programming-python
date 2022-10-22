@@ -1,24 +1,34 @@
-import api
+import gk.assignments.api as api
 
-gk_api = api.GkApi()
+import sys
+
+def eprint(*args, **kwargs):
+    print(*args, file=sys.stderr, **kwargs)
 
 
 def check_assignment(step_num: int, test_num: int, name: str, answers: dict):
-    print('\n--------- #%s. Checking assignment: %s' % (test_num, name))
+    eprint('\n--------- #%s. Checking assignment: %s' % (test_num, name))
+    gk_api = api.GkApi()
 
     req = api.GkAssignmentRequest(step_num, test_num, answers)
+    is_ok = False
+
     try:
         resp = gk_api.do_assignments(req)
         if resp['is_ok']:
-            print('OK!')
+            eprint('OK!')
+            is_ok = True
         else:
-            print('FAILED!')
-            print('\tKey<%s>: expected<%s> but got<%s>' % (resp['key.txt'], resp['expected'], resp['got']))
+            eprint('FAILED!')
+            eprint('\tKey<%s>: expected<%s> but got<%s>' % (resp['key'], resp['expected'], resp['got']))
     except Exception as e:
-        print(f'Error: %s' % e)
+        eprint(f'Error: %s' % e)
 
-    print('--------- #%s. End\n' % test_num)
+    eprint('--------- #%s. End\n' % test_num)
+    return is_ok
 
 
 if __name__ == '__main__':
+    import os
+    os.chdir('../..')
     check_assignment(5, 1, 'should calculate rent', {"a": "a", "b": "b"})
