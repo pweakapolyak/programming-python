@@ -16,6 +16,12 @@ class GkTest(unittest.TestCase):
             task_callback()
         return mock_stdout.getvalue()
 
+    def float_answer(self, str: str, round=2):
+        try:
+            return round(float(str), 2)
+        except:
+            return str.rstrip()
+
 
 if __name__ == '__main__':
     unittest.main()

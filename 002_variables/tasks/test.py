@@ -24,7 +24,7 @@ class MyTestCase(GkTest):
                     return base
                 return h
 
-            y = round(float(super().wrapper_with_side_effect(lambda: task01.task(), side_effect)), 2)
+            y = super().float_answer(super().wrapper_with_side_effect(lambda: task01.task(), side_effect))
             answers[f"a=%s_h=%s" % (base, h)] = str(y)
         print(json.dumps(answers))
         self.assertEqual(assignment.check_assignment(8, 1, 'Area of triangle', answers), True)
@@ -45,7 +45,7 @@ class MyTestCase(GkTest):
                     return price
                 return percent
 
-            y = round(float(super().wrapper_with_side_effect(lambda: task02.task(), side_effect)), 2)
+            y = super().float_answer(super().wrapper_with_side_effect(lambda: task02.task(), side_effect))
             answers[f'num=%s_percent=%s' % (price, percent)] = str(y)
         print(json.dumps(answers))
         self.assertEqual(assignment.check_assignment(8, 2, 'Percent of number', answers), True)
