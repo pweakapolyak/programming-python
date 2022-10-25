@@ -10,6 +10,12 @@ class GkTest(unittest.TestCase):
             task_callback()
         return mock_stdout.getvalue()
 
+    @unittest.mock.patch('sys.stdout', new_callable=StringIO)
+    def wrapper_with_side_effect(self, task_callback, side_effect_func, mock_stdout):
+        with patch('builtins.input', side_effect=side_effect_func):
+            task_callback()
+        return mock_stdout.getvalue()
+
 
 if __name__ == '__main__':
     unittest.main()
