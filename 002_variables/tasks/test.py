@@ -1,3 +1,4 @@
+import json
 import os
 import unittest
 import task01
@@ -24,9 +25,9 @@ class MyTestCase(GkTest):
                 return h
 
             y = round(float(super().wrapper_with_side_effect(lambda: task01.task(), side_effect)), 2)
-            answers[f'%s %s' % (base, h)] = str(y)
-        print(answers)
-        self.assertEqual(assignment.check_assignment(5, 1, 'Square root', answers), True)
+            answers[f"a=%s_h=%s" % (base, h)] = str(y)
+        print(json.dumps(answers))
+        self.assertEqual(assignment.check_assignment(8, 1, 'Area of triangle', answers), True)
 
 
     def test_task_02(self):
@@ -45,9 +46,9 @@ class MyTestCase(GkTest):
                 return percent
 
             y = round(float(super().wrapper_with_side_effect(lambda: task02.task(), side_effect)), 2)
-            answers[f'%s %s' % (price, percent)] = str(y)
-        print(answers)
-        self.assertEqual(assignment.check_assignment(5, 1, 'Square root', answers), True)
+            answers[f'num=%s_percent=%s' % (price, percent)] = str(y)
+        print(json.dumps(answers))
+        self.assertEqual(assignment.check_assignment(8, 2, 'Percent of number', answers), True)
 
 
 os.chdir('../..')
