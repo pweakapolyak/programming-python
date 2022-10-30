@@ -18,11 +18,11 @@
 def task():
     salary = int(input('Salary: '))
     age = int(input('Age: '))
-    is_has_possessions = int(input('Is has possession(1/0): '))
+    is_has_possessions = int(input('Is has possession(1/0): ')) == 1
 
     is_decision_1 = age >= 22 and salary >= 500_000
     is_decision_2 = age >= 18 and salary >= 650_000
-    is_decision_3 = is_has_possessions == 1 and age >= 30
+    is_decision_3 = is_has_possessions and age >= 30
 
     print(is_decision_1 or is_decision_2 or is_decision_3)
 
