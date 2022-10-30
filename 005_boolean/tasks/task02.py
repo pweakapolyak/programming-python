@@ -6,9 +6,7 @@
 # --------------------- Интервалы ---------------------
 
 def task():
-    num = int(input('Enter num:'))
-    is_in_interval = 100 < num < 500
-    print(is_in_interval)
+    print()
 
 
 if __name__ == "__main__":
