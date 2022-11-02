@@ -13,16 +13,7 @@
 # --------------------- Прибыль или убыток ---------------------
 
 def task():
-    cost_price = float(input('Enter cost price: '))
-    sell_price = float(input('Enter sell price: '))
-
-    delta = abs(cost_price - sell_price)
-    delta_rounded = round(delta, 2)
-
-    if cost_price <= sell_price:
-        print('profit', delta_rounded)
-    else:
-        print('loss', delta_rounded)
+    print()
 
 
 if __name__ == "__main__":
