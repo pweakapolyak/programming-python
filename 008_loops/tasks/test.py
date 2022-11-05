@@ -88,8 +88,7 @@ class MyTestCase(GkTest):
                     return semi_annual_raise_percent
 
             y = super().wrapper_with_side_effect(lambda: task04.task(), side_effect)
-            answers[
-                f"house_cost=%s_annual_salary=%s_percent_saved=%s_semi_annual_raise_percent=%s" % test] = y.rstrip().lower()
+            answers[f"house_cost=%s_annual_salary=%s_percent_saved=%s_semi_annual_raise_percent=%s" % test] = y.rstrip().lower()
         print(json.dumps(answers))
         self.assertEqual(assignment.check_assignment(24, 4, 'Down payment #2', answers), True)
 
