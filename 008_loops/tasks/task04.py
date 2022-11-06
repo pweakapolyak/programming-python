@@ -4,7 +4,7 @@
 
 # --------------------- Накопления на дом #2 ---------------------
 
-def task():
+def task(debug = False):
     portion_of_down_payment = 0.25
     annual_investment_rate = 0.04
     monthly_investment_rate = annual_investment_rate / 12
@@ -22,6 +22,15 @@ def task():
 
     while current_savings < cost_of_down_payment:
 
+        if debug:
+            print('**************')
+            print('Month: ', num_of_months)
+            print('Current saving: ', current_savings)
+            print('Investment from bank: ', current_savings * monthly_investment_rate)
+            print('Portion saved: ', monthly_salary * (portion_saved_percent/100))
+            print('**************')
+            print('\n\n')
+
         if num_of_months > 0 and num_of_months % 6 == 0:
             annual_salary += annual_salary * (semi_annual_raise_percent / 100)
             monthly_salary = annual_salary / 12
@@ -35,4 +44,4 @@ def task():
 
 
 if __name__ == "__main__":
-    task()
+    task(True)
