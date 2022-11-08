@@ -13,12 +13,11 @@ def task():
 
     total_cost = int(input('Enter house total cost: '))
     annual_salary = int(input('Enter annual salary: '))
-    num_of_years = int(input('Enter num of years: '))
+    goal_of_months = int(input('Enter num of months: '))
 
     monthly_salary = annual_salary / 12
     cost_of_down_payment = total_cost * portion_of_down_payment
 
-    goal_of_months = num_of_years * 12
     month_guess = 0
 
     low = 0

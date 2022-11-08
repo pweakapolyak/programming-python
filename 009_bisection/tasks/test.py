@@ -10,9 +10,9 @@ class MyTestCase(GkTest):
 
     def test_task_03(self):
         test_set = [
-            (3_500_000, 350_000, 3),
-            (3_500_000, 350_000, 1),
-            (3_500_000, 350_000, 10),
+            (3_500_000, 350_000, 3*12),
+            (3_500_000, 350_000, 12),
+            (3_500_000, 350_000, 10*12),
         ]
         answers = {}
         for test in test_set:
@@ -38,7 +38,7 @@ class MyTestCase(GkTest):
                 answer = super().float_answer(y.rstrip().lower(), 0)
             else:
                 answer = "impossible"
-            answers[f"house_cost=%s_annual_salary=%s_num_of_years=%s" % test] = answer
+            answers[f"house_cost=%s_annual_salary=%s_num_of_months=%s" % test] = answer
 
         print(json.dumps(answers))
         self.assertEqual(assignment.check_assignment(27, 1, 'Bisection', answers), True)
