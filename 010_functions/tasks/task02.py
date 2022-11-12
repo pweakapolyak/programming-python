@@ -16,21 +16,7 @@
 # --------------------- Числа Фибоначчи ---------------------
 
 def fibonacci(n):
-    f_prev_prev = 0
-    f_prev = 1
-
-    if n == 1:
-        return f_prev_prev
-    elif n == 2:
-        return f_prev
-
-    f_n = 0
-    for i in range(n-2):
-        f_n = f_prev_prev + f_prev
-        f_prev_prev = f_prev
-        f_prev = f_n
-
-    return f_n
+    pass
 
 
 if __name__ == "__main__":
