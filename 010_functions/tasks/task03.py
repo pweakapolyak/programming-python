@@ -61,7 +61,6 @@ def get_month_by_day_number(day_number, is_leap_year):
     max_day_in_september = 30 + max_day_in_august
     max_day_in_october = 31 + max_day_in_september
     max_day_in_november = 30 + max_day_in_october
-    max_day_in_december = 31 + max_day_in_november
 
     if day_number <= max_day_in_january:
         return "January"
@@ -85,7 +84,7 @@ def get_month_by_day_number(day_number, is_leap_year):
         return "October"
     elif day_number <= max_day_in_november:
         return "November"
-    elif day_number <= max_day_in_december:
+    else:
         return "December"
 
 
