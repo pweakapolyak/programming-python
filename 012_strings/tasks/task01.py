@@ -12,16 +12,7 @@
 # --------------------- Посчитать количество букв 'a' ---------------------
 
 def count_a_latter(str, is_ignore_case=False):
-
-    target = 'a'
-
-    target_counter = 0
-    for char in str:
-        processed_char = char.lower() if is_ignore_case else char
-        if processed_char == target:
-            target_counter += 1
-
-    return target_counter
+    pass
 
 
 if __name__ == "__main__":

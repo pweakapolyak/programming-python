@@ -17,25 +17,10 @@
 
 
 def encode(original_str):
-
-    encoded_result = ""
-    for char in original_str:
-        if char == 'z':
-            encoded_result += 'a'
-        else:
-            encoded_result += chr(ord(char)+1)
-
-    return encoded_result
+    pass
 
 def decode(encoded_str):
-    decoded_result = ""
-    for char in encoded_str:
-        if char == 'a':
-            decoded_result += 'z'
-        else:
-            decoded_result += chr(ord(char) - 1)
-
-    return decoded_result
+    pass
 
 
 if __name__ == "__main__":

@@ -17,13 +17,7 @@
 # --------------------- Парсим цену из html документ ---------------------
 
 def parse_price_from_document(doc_str):
-    tmp_str1 = "itemprop=\"price\""
-    tmp_index = doc_str.find(tmp_str1)
-
-    tmp_str2 = "content=\""
-    start_index = doc_str.find(tmp_str2, tmp_index) + len(tmp_str2)
-    end_index = doc_str.find("\"", start_index)
-    return int(doc_str[start_index:end_index])
+    pass
 
 
 if __name__ == "__main__":
