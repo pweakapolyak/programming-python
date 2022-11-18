@@ -10,29 +10,8 @@
 
 # --------------------- Мода ---------------------
 
-def count_of_value(num_list, value):
-    counter = 0
-    for element in num_list:
-        if element == value:
-            counter += 1
-    return counter
-
-
 def moda(num_list):
-    if not num_list:
-        return None
-
-    moda_value = num_list[0]
-    moda_count = count_of_value(num_list, moda_value)
-
-    for element in num_list:
-        if element == moda_value:
-            continue
-        new_count_value = count_of_value(num_list, element)
-        if new_count_value > moda_count:
-            moda_value = element
-            moda_count = new_count_value
-    return moda_value
+    pass
 
 
 if __name__ == "__main__":

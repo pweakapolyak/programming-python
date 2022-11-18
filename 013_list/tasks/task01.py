@@ -11,26 +11,11 @@
 # --------------------- Максимальное и минимальное число в списке ---------------------
 
 def max_abs(num_list):
-    # if len(list) == 0
-    if not num_list:
-        return None
-    max_value = num_list[0]
-
-    for element in num_list:
-        if abs(max_value) < abs(element):
-            max_value = element
-    return max_value
+    pass
 
 
 def min_abs(num_list):
-    if not num_list:
-        return None
-    min_value = num_list[0]
-
-    for element in num_list:
-        if abs(min_value) > abs(element):
-            min_value = element
-    return min_value
+    pass
 
 
 if __name__ == "__main__":

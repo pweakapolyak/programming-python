@@ -22,15 +22,7 @@ def load_dataset():
 
 def find_avg_salary():
     dataset = load_dataset()
-    sum_salary = 0
-    num_records = 0
-    for element in dataset:
-        row = element.split(",")
-        if row[0] == "2021e" and row[3] == "Data Scientist":
-            sum_salary += float(row[6])
-            num_records += 1
-
-    return sum_salary / num_records
+    pass
 
 
 if __name__ == "__main__":

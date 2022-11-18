@@ -21,19 +21,7 @@ def load_word_database():
 
 def search_by_pattern(pattern):
     word_database = load_word_database()
-
-    result = word_database[:]
-
-    for word in result[:]:
-        if len(word) != len(pattern):
-            result.remove(word)
-
-    for index, char in enumerate(pattern):
-        for word in result[:]:
-            if char != "*" and word[index] != char:
-                result.remove(word)
-
-    return result
+    pass
 
 
 if __name__ == "__main__":

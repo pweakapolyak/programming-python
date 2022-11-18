@@ -8,11 +8,7 @@
 # --------------------- Отфильтровать нечетные элементы в списке ---------------------
 
 def filter_odd(num_list):
-    result_list = []
-    for element in num_list:
-        if element % 2 == 1:
-            result_list.append(element)
-    return result_list
+    pass
 
 
 if __name__ == "__main__":
