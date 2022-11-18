@@ -85,7 +85,7 @@ class MyTestCase(GkTest):
         ]
         answers = {}
         for test in test_set:
-            answer = str(task05.search_by_pattern(test))
+            answer = str(task05.search_by_pattern(test)).replace("\'", "\"")
             answers[f"pattern=%s" % test] = answer
 
         os.chdir('../..')
