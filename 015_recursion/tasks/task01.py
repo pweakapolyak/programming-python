@@ -7,6 +7,13 @@
 
 # --------------------- Найти всевозможные перестановки букв в слове ---------------------
 
+def remove_char_from_word_by_index(word, delete_index):
+    if delete_index == 0:
+        return word[1:]
+    elif delete_index == len(word) - 1:
+        return word[:-1]
+    else:
+        return word[:delete_index] + word[delete_index + 1:]
 
 def permutation(word):
     if len(word) == 1 or len(word) == 0:
@@ -15,18 +22,11 @@ def permutation(word):
     result = []
 
     for index, char in enumerate(word):
-        if index == 0:
-            subsequence = word[1:]
-        elif index == len(word) - 1:
-            subsequence = word[:-1]
-        else:
-            subsequence = word[:index] + word[index+1:]
-
-        list_sub_permutations = permutation(subsequence)
+        word_without_char = remove_char_from_word_by_index(word, index)
+        list_sub_permutations = permutation(word_without_char)
         result += [char + x for x in list_sub_permutations]
 
     return result
-
 
 
 if __name__ == "__main__":
