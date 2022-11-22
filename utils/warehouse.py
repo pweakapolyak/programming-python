@@ -3,14 +3,43 @@
 
 
 class Good:
-    def __init__(self, guid, name):
+    def __init__(self, guid, name, quantity=1):
         self.__guid = guid
         self.__name = name
+        self.__quantity = quantity
 
     def __eq__(self, other):
         if not isinstance(other, Good):
             return False
         return self.__guid == other.__guid
+
+    def is_valid(self):
+        return True
+
+    def get_quantity(self):
+        return self.__quantity
+
+class Alco(Good):
+    def __init__(self, guid, name, legal_storage_code):
+        """
+        :param guid:
+        :param name:
+        :param legal_storage_code:
+        :type legal_storage_code: str
+        """
+        super().__init__(guid, name)
+        self.__legal_storage_code = legal_storage_code
+
+    def is_valid(self):
+        return self.__legal_storage_code.startswith("ru-159")
+
+class Diamond(Good):
+    def __init__(self, guid, name, quantity):
+        super().__init__(guid, name, quantity)
+
+    def is_valid(self):
+        return super().get_quantity() < 15
+
 
 
 class Warehouse:
@@ -21,7 +50,7 @@ class Warehouse:
         print('Number of goods: ', len(self.__goods))
 
     def __add__(self, other):
-        if isinstance(other, Good):
+        if isinstance(other, Good) and other.is_valid():
             self.__goods.append(other)
         return self
 
@@ -47,4 +76,14 @@ if __name__ == "__main__":
     warehouse += g2
     warehouse.print_info()
     warehouse -= Good(1, "g1")
+    warehouse.print_info()
+
+    alco1 = Alco(3, "beer", "ru-159-391")
+    alco2 = Alco(3, "beer", "ru-152-391")
+    warehouse += alco1
+    warehouse += alco2
+    warehouse.print_info()
+
+    d1 = Diamond(4, "saddsa", 13)
+    warehouse += d1
     warehouse.print_info()
