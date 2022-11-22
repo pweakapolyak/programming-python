@@ -1,5 +1,11 @@
 
 
+class GoodValidationError(Exception):
+    def __init__(self, good):
+        self.good = good
+
+    def __str__(self):
+        return "Good is not correct: " + str(self.good)
 
 
 class Good:
@@ -7,6 +13,9 @@ class Good:
         self.__guid = guid
         self.__name = name
         self.__quantity = quantity
+
+    def __str__(self):
+        return str(self.__guid)
 
     def __eq__(self, other):
         if not isinstance(other, Good):
@@ -52,6 +61,8 @@ class Warehouse:
     def __add__(self, other):
         if isinstance(other, Good) and other.is_valid():
             self.__goods.append(other)
+        else:
+            raise GoodValidationError(other)
         return self
 
     def __sub__(self, other):
@@ -81,7 +92,11 @@ if __name__ == "__main__":
     alco1 = Alco(3, "beer", "ru-159-391")
     alco2 = Alco(3, "beer", "ru-152-391")
     warehouse += alco1
-    warehouse += alco2
+
+    try:
+        warehouse += alco2
+    except GoodValidationError as e:
+        print(e.good)
     warehouse.print_info()
 
     d1 = Diamond(4, "saddsa", 13)
