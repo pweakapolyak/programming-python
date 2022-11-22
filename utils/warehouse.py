@@ -58,6 +58,9 @@ class Warehouse:
     def print_info(self):
         print('Number of goods: ', len(self.__goods))
 
+    def get_count(self):
+        return len(self.__goods)
+
     def __add__(self, other):
         if isinstance(other, Good) and other.is_valid():
             self.__goods.append(other)
