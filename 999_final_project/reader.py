@@ -31,7 +31,8 @@ def read_latest_news(url):
         news_story = NewsStory(guid, title, description, link, pubdate)
         result.append(news_story)
 
-    triggers = read_trigger_config("trigger_config.txt")
-    return filter_stories(result, triggers)
+    # TODO: uncomment this line when implement methods
+    # triggers = read_trigger_config("trigger_config.txt")
+    # return filter_stories(result, triggers)
 
-    # return result
+    return result
