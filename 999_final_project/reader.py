@@ -1,7 +1,9 @@
-import feedparser
-from utils import translate_html
 from datetime import datetime
-from story import NewsStory
+
+import feedparser
+
+from filter import *
+from utils import translate_html
 
 
 def read_latest_news(url):
@@ -28,4 +30,8 @@ def read_latest_news(url):
 
         news_story = NewsStory(guid, title, description, link, pubdate)
         result.append(news_story)
-    return result
+
+    triggers = read_trigger_config("trigger_config.txt")
+    return filter_stories(result, triggers)
+
+    # return result

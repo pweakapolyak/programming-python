@@ -19,7 +19,7 @@ def display_not_shown_story(cont, story):
 
 
 def update_news():
-    print("Read all news from google . . .", end=' ')
+    print("Read all news from google . . .")
     stories = read_latest_news("https://news.google.com/rss?hl=ru&gl=RU&ceid=RU:ru")
 
     for s in stories:

@@ -1,21 +1,8 @@
 
-// title trigger named t1
-t1,TITLE,Газ
+t1,TITLE,Россия
+t2,DESCRIPTION,Украина
+t3,AFTER,22 Nov 2022 12:00:10
+t4,BEFORE,24 Nov 2022 12:00:10
+t5,AND,t3,t4
 
-// description trigger named t2
-t2,DESCRIPTION,Футбол
-
-// description trigger named t3
-t3,DESCRIPTION,Спорт
-
-// after trigger named t4
-t4,AFTER,23 Nov 2022 12:00:10
-
-// composite trigger named t4
-t5,AND,t2,t3
-
-// composite trigger named t4
-t6,AND,t1,t4
-
-// the trigger list contains t1 and t4
-ADD,t5,t6
+ADD,t1,t2,t5
