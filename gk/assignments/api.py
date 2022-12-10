@@ -1,6 +1,7 @@
 import configparser
 
 import requests
+import urllib3
 
 
 class ApiConfig:
@@ -70,7 +71,8 @@ class GkApi:
 
     def do_assignments(self, request: GkAssignmentRequest):
         json = request.json()
-        response = requests.post(self.__construct_url__(request.step), json=json)
+        urllib3.disable_warnings()
+        response = requests.post(self.__construct_url__(request.step), json=json, verify=False)
 
         if response.status_code == 401:
             raise ApiKeyIncorrect(f'GK_API_KEY<%s> is incorrect' % json['key.txt'])
