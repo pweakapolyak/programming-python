@@ -14,8 +14,11 @@
 
 
 def task():
-    print()
-
-
+    second = int(input('Введите кол-во секунд: '))
+    day = second//86400
+    hour = (second%86400)//3600
+    minute = ((second%86400)-(hour*3600))//60
+    sec = ((second%86400)-(hour*3600))%60
+    print(day, hour, minute, sec)
 if __name__ == "__main__":
     task()
