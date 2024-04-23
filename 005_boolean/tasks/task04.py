@@ -16,7 +16,11 @@
 # --------------------- Credit scoring ---------------------
 
 def task():
-    print()
+    zp = int(input('Введите годовую зарплату: '))
+    age = int(input('Введите возраст: '))
+    home = int(input('Введите есть ли имущество (1 - имеет, 0 - не имеет) '))
+    result = (age >= 22 and zp >= 500_000) or (age >= 18 and zp >= 650_000) or (age >= 30 and home == 1)
+    print(result)
 
 
 if __name__ == "__main__":
