@@ -13,7 +13,17 @@
 # --------------------- Прибыль или убыток ---------------------
 
 def task():
-    print()
+    buy = float(input('Введите стоимость покупки акции: '))
+    sell = float(input('Введите стоимость продажи акции: '))
+    if sell >= buy:
+        profit1 = sell - buy
+        profit = round(profit1, 2)
+        print('profit', profit)
+    else:
+        loss1 = buy - sell
+        loss = round(loss1, 2)
+        print('loss', loss)
+
 
 
 if __name__ == "__main__":

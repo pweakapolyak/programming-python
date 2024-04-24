@@ -8,7 +8,12 @@
 # --------------------- Число или буква ---------------------
 
 def task():
-    print()
+    str = input('Введите 1 символ: ')
+    if 48 <= ord(str) <= 57:
+        print('digit')
+    elif (65 <= ord(str) <= 90) or (97 <= ord(str) <= 122):
+        print('alpha')
+    else: print('incorrect character')
 
 
 if __name__ == "__main__":

@@ -16,7 +16,16 @@
 # --------------------- Високосный год ---------------------
 
 def task():
-    print()
+    year = int(input('Введите год: '))
+    if year < 0 or year >= 3000:
+        print('incorrect year')
+    elif year % 400 == 0:
+        print('leap year')
+    elif year % 100 == 0:
+        print('not leap year')
+    elif year % 4 == 0:
+        print('leap year')
+    else: print('not leap year')
 
 
 if __name__ == "__main__":
