@@ -15,8 +15,12 @@
 # --------------------- Вложенный цикл ---------------------
 
 def task():
-    print()
-
+    str = '*'
+    n = int(input('N='))
+    for i in range(n):
+        for j in range(i+1):
+            print(str, end='')
+        print()
 
 if __name__ == "__main__":
     task()
